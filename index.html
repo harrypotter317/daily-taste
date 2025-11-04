@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DailyTaste</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>DailyTaste 🎧</h1>
+  <p>Connect with Spotify to generate your daily playlist</p>
+
+  <button id="loginBtn">Log in with Spotify</button>
+
+  <div style="margin-top:16px">
+    <label for="songCount">Playlist length:</label>
+    <input id="songCount" type="number" value="20" min="1" style="width:80px"/>
+    <button id="genBtn">Generate Daily Playlist</button>
+  </div>
+
+  <p id="status"></p>
+
+  <script src="script.js"></script>
+</body>
+</html>
