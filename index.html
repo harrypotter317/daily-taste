@@ -1,25 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DailyTaste</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <h1>DailyTaste 🎧</h1>
-  <p>Connect with Spotify to generate your daily playlist</p>
-
+  <p>Click below to log in with Spotify and generate your daily playlist.</p>
   <button id="loginBtn">Log in with Spotify</button>
 
-  <div style="margin-top:16px">
-    <label for="songCount">Playlist length:</label>
-    <input id="songCount" type="number" value="20" min="1" style="width:80px"/>
-    <button id="genBtn">Generate Daily Playlist</button>
-  </div>
+  <script>
+    const clientId = "00b0e4aa91f24367b748a34cddea824c";
+    const redirectUri = "https://harrypotter317.github.io/daily-taste/daily.html";
+    const scope = [
+      "user-read-recently-played",
+      "playlist-modify-public",
+      "playlist-modify-private",
+      "user-read-private"
+    ].join(" ");
 
-  <p id="status"></p>
-
-  <script src="script.js"></script>
+    document.getElementById("loginBtn").onclick = () => {
+      const url = new URL("https://accounts.spotify.com/authorize");
+      url.searchParams.set("client_id", clientId);
+      url.searchParams.set("response_type", "token");
+      url.searchParams.set("redirect_uri", redirectUri);
+      url.searchParams.set("scope", scope);
+      url.searchParams.set("show_dialog", "true");
+      window.location.href = url.toString();
+    };
+  </script>
 </body>
 </html>
