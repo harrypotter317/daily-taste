@@ -1,5 +1,5 @@
 const clientId = "00b0e4aa91f24367b748a34cddea824c";
-const redirectUri = "https://yourusername.github.io/your-repo-name/"; // replace with your GitHub Pages URL
+const redirectUri = "https://harrypotter317.github.io/daily-taste/";
 const scope = [
   "user-read-recently-played",
   "playlist-modify-public",
